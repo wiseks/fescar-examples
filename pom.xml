@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>my-spring-cloud-examples</groupId>
+	<artifactId>my-spring-cloud-examples</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-build</artifactId>
+		<version>2.0.4.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<spring-cloud-openfeign.version>2.0.2.RELEASE</spring-cloud-openfeign.version>
+		
+		<!-- Dependency Versions -->
+        <spring-cloud-commons.version>2.0.2.RELEASE</spring-cloud-commons.version>
+        <spring-cloud-netflix.version>2.0.2.RELEASE</spring-cloud-netflix.version>
+        <spring-cloud-openfeign.version>2.0.2.RELEASE</spring-cloud-openfeign.version>
+        <spring-cloud-bus.version>2.0.0.RELEASE</spring-cloud-bus.version>
+        <spring-cloud-alibaba>0.2.2.BUILD-SNAPSHOT</spring-cloud-alibaba>
+
+        <junit.version>4.12</junit.version>
+        <javax-servlet-api>3.0</javax-servlet-api>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+	</properties>
+
+	<modules>
+		<module>my-spring-cloud-examples-account</module>
+		<module>my-spring-cloud-examples-order</module>
+		<module>my-spring-cloud-examples-product</module>
+		<module>my-spring-cloud-examples-business</module>
+	</modules>
+	
+	<dependencyManagement>
+        <dependencies>
+
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-commons-dependencies</artifactId>
+                <version>${spring-cloud-commons.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-test-support</artifactId>
+                <scope>test</scope>
+                <version>${spring-cloud-commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-netflix</artifactId>
+                <version>${spring-cloud-netflix.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-dependencies</artifactId>
+                <version>${spring-cloud-openfeign.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-bus-dependencies</artifactId>
+                <version>${spring-cloud-bus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.cobertura</groupId>
+                <artifactId>cobertura-runtime</artifactId>
+                <version>${cobertura.version}</version>
+                <scope>provided</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-openfeign-dependencies</artifactId>
+			<version>${spring-cloud-openfeign.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-fescar</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+	</dependencies>
+</project>
